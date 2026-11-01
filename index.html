@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>兔洞双人组</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="stage" aria-label="兔洞双人组双人游戏">
+        <header class="topbar">
+          <div>
+            <h1>兔洞双人组</h1>
+            <p>双人合作平台闯关</p>
+          </div>
+          <div class="stats" aria-live="polite">
+            <span>模式 <strong id="mode">首页</strong></span>
+            <span>关卡 <strong id="level">1</strong></span>
+            <span>胡萝卜 <strong id="carrots">0/0</strong></span>
+            <span>宝石 <strong id="gems">0/0</strong></span>
+            <span>钥匙 <strong id="keys">0/0</strong></span>
+            <span>时间 <strong id="timer">0.0</strong></span>
+            <span>最佳 <strong id="best">--</strong></span>
+            <span>重试 <strong id="falls">0</strong></span>
+          </div>
+        </header>
+
+        <section id="home" class="home-screen" aria-label="模式选择首页">
+          <div class="home-copy">
+            <h2>选择舞台 1</h2>
+            <p>单人挑战更难，双人合作要分工踩机关、开门拿钥匙。</p>
+          </div>
+          <div class="mode-grid">
+            <button class="mode-card" data-mode="solo" type="button">
+              <span>单人挑战</span>
+              <strong>1P</strong>
+              <small>蓝兔独闯 20 关，只能拿蓝宝石，平台更窄。</small>
+            </button>
+            <button class="mode-card" data-mode="duo" type="button">
+              <span>双人合作</span>
+              <strong>2P</strong>
+              <small>蓝粉兔分工踩 5 秒倒计时机关、拿钥匙，最后必须各进自己的双人门。</small>
+            </button>
+          </div>
+        </section>
+
+        <canvas id="game" width="1152" height="648" aria-label="游戏画面"></canvas>
+
+        <footer class="controls">
+          <div id="blueHelp"><strong>蓝兔</strong> A/D 移动，W 跳，Q 冲刺，可过蓝水</div>
+          <div id="pinkHelp"><strong>粉兔</strong> ←/→ 移动，↑ 跳，/ 冲刺，可过粉火</div>
+          <div>R 重开，P 暂停，N/B 切关，H 首页</div>
+        </footer>
+
+        <div class="touch-controls" aria-label="触屏控制">
+          <div>
+            <span>蓝兔</span>
+            <button data-key="a" type="button">左</button>
+            <button data-key="d" type="button">右</button>
+            <button data-key="w" type="button">跳</button>
+            <button data-key="q" type="button">冲</button>
+          </div>
+          <div>
+            <span>粉兔</span>
+            <button data-key="ArrowLeft" type="button">左</button>
+            <button data-key="ArrowRight" type="button">右</button>
+            <button data-key="ArrowUp" type="button">跳</button>
+            <button data-key="/" type="button">冲</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./game.js"></script>
+  </body>
+</html>
